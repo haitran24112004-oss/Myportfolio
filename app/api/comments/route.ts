@@ -29,15 +29,3 @@ export async function POST(request: Request) {
   `) as Array<{ id: string; name: string; text: string; created_at: string }>;
   return NextResponse.json({ comment: rows[0] }, { status: 201 });
 }
-
-export async function DELETE(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const id = searchParams.get("id");
-  if (!id) {
-    return NextResponse.json({ error: "Missing id" }, { status: 400 });
-  }
-
-  const sql = getSql();
-  await sql`DELETE FROM comments WHERE id = ${id}`;
-  return NextResponse.json({ ok: true });
-}
