@@ -8,6 +8,26 @@ type Tab = "projects" | "certificates" | "techstack";
 
 const projects = [
   {
+    title: "callcaloAI",
+    role: "iOS Developer (Solo) · 2026",
+    description:
+      "An AI-powered iOS calorie tracking app that uses Google Gemini Vision to recognize food from photos and provide instant nutritional analysis.",
+    tags: [
+      "Swift",
+      "SwiftUI",
+      "SwiftData",
+      "Gemini API",
+      "Google Sign-In",
+      "Swift Charts",
+    ],
+    link: "https://github.com/haitran24112004-oss/callcaloAI",
+    highlights: [
+      "AI food recognition via Google Gemini Vision: snap a photo to get instant calories, carbs, protein, and fat with a confidence score",
+      "Manual food search across 3 nutrition databases simultaneously: USDA FoodData Central, Open Food Facts, and Calorie Ninjas API",
+      "Daily dashboard with a calorie ring, macro tracking, weight/water charts via Swift Charts, BMI calculator, and Google Sign-In",
+    ],
+  },
+  {
     title: "CRM.lemar.vn",
     role: "Fullstack Developer (Solo) · 2025 – 2026",
     description:
@@ -141,7 +161,7 @@ export default function Portfolio() {
                         rel="noopener noreferrer"
                         className="mono text-xs text-zinc-500 transition-colors hover:text-zinc-100"
                       >
-                        visit ↗
+                        {p.link.includes("github.com") ? "code" : "visit"} ↗
                       </a>
                     )}
                   </div>
