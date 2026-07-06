@@ -53,7 +53,7 @@ export default function Intro() {
               transition={{ delay: 1.2, duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
               className="text-[clamp(18px,3vw,30px)] font-extrabold tracking-[-0.05em]"
             >
-              Chào mừng
+              Winter
             </motion.span>
             <motion.span
               initial={{ opacity: 0, x: -120 }}
@@ -61,7 +61,7 @@ export default function Intro() {
               transition={{ delay: 1.5, duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
               className="text-[clamp(18px,3vw,30px)] font-extrabold tracking-[-0.05em]"
             >
-              bạn đến với
+              is coming
             </motion.span>
           </div>
           <motion.h1
@@ -70,7 +70,7 @@ export default function Intro() {
             transition={{ delay: 1.8, duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
             className="whitespace-nowrap text-center text-[clamp(18px,3vw,30px)] font-extrabold leading-[1.15] tracking-[-0.05em]"
           >
-            Portfolio của tôi
+            to my Portfolio
           </motion.h1>
         </div>
 

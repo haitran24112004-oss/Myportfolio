@@ -11,39 +11,39 @@ const projects = [
     title: "CRM.lemar.vn",
     role: "Fullstack Developer (Solo) · 2025 – 2026",
     description:
-      "Hệ thống quản lý nội bộ toàn diện cho doanh nghiệp dịch vụ kỹ thuật marine/engineering: báo giá, hóa đơn, hợp đồng, quản lý nhân sự, vật tư, tài chính, đối tác và dashboard analytics.",
+      "A comprehensive internal management system for a marine/engineering services company: quotations, invoices, contracts, HR, inventory, finance, partners, and an analytics dashboard.",
     tags: ["Next.js", "NextAuth", "JWT", "Recharts", "Custom Print CSS"],
     link: "https://crm.lemar.vn",
     highlights: [
-      "Quản lý tài liệu thương mại: Quotations, Invoices, Contracts, PO/SO, Packing Lists, Delivery Notes",
-      "Authentication & phân quyền với NextAuth + JWT + bcrypt, middleware bảo vệ routes",
-      "Xuất PDF tài liệu với custom print CSS, dashboard trực quan hóa dữ liệu kinh doanh",
+      "Commercial document management: Quotations, Invoices, Contracts, PO/SO, Packing Lists, Delivery Notes",
+      "Authentication & authorization with NextAuth + JWT + bcrypt, middleware-protected routes",
+      "PDF document export with custom print CSS, dashboard for business data visualization",
     ],
   },
   {
     title: "AI Attendance Terminal",
     role: "Backend & Embedded Software Developer · 2026",
     description:
-      "Hệ thống chấm công thông minh tích hợp nhận diện khuôn mặt và thẻ RFID: firmware ESP32-S3, backend FastAPI với InsightFace anti-spoofing, giao tiếp 2 chiều thiết bị ↔ server.",
+      "A smart attendance system with face recognition and RFID cards: ESP32-S3 firmware, FastAPI backend with InsightFace anti-spoofing, two-way device ↔ server communication.",
     tags: ["C++", "ESP32-S3", "Python", "FastAPI", "OpenCV", "WebSocket"],
     link: null,
     highlights: [
-      "Firmware ESP32-S3 (C++/Arduino): đọc thẻ Wiegand, điều khiển relay cửa, WebSocket real-time",
-      "Backend FastAPI tích hợp InsightFace nhận diện khuôn mặt, chống giả mạo, tự động check-in/out",
-      "REST API 2 chiều: ESP32 gửi ảnh/RFID lên server, server gọi lại ESP32 để mở cửa",
+      "ESP32-S3 firmware (C++/Arduino): Wiegand card reading, door relay control, real-time WebSocket",
+      "FastAPI backend integrating InsightFace face recognition, anti-spoofing, automatic check-in/out",
+      "Two-way REST API: ESP32 sends photos/RFID to the server, server calls back to ESP32 to unlock the door",
     ],
   },
   {
-    title: "Web Development @ Lemar Việt Nam",
-    role: "Thực tập sinh IT · 2024 – nay",
+    title: "Web Development @ Lemar Vietnam",
+    role: "IT Intern · 2024 – present",
     description:
-      "Quản lý các dự án phát triển website từ thiết kế đến hoàn thiện, tối ưu tương thích đa trình duyệt và nền tảng; phát triển theme tùy chỉnh cho WordPress, PHP-Fusion.",
+      "Managing website development projects from design to completion, optimizing cross-browser and cross-platform compatibility; building custom themes for WordPress and PHP-Fusion.",
     tags: ["WordPress", "PHP", "PHP-Fusion", "Code Review"],
     link: null,
     highlights: [
-      "Phát triển và tích hợp các theme tùy chỉnh vào WordPress, PHP-Fusion",
-      "Đánh giá, thử nghiệm tính năng mới đảm bảo tương thích với hệ thống hiện có",
-      "Tham gia review source code và hỗ trợ các thành viên trong nhóm",
+      "Developed and integrated custom themes into WordPress and PHP-Fusion",
+      "Tested new features to ensure compatibility with existing systems",
+      "Reviewed source code and supported teammates",
     ],
   },
 ];
@@ -58,7 +58,7 @@ const techStack: { group: string; items: string[] }[] = [
     items: ["Python / FastAPI", "Node.js", "NextAuth + JWT", "SQLite / SQLAlchemy", "REST API"],
   },
   {
-    group: "Embedded & Khác",
+    group: "Embedded & Others",
     items: ["C++ / Arduino (ESP32)", "OpenCV / InsightFace", "WebSocket", "WordPress / PHP", "Git"],
   },
 ];
@@ -82,8 +82,8 @@ export default function Portfolio() {
           Portfolio Showcase
         </h2>
         <p className="mb-10 max-w-[540px] text-[15px] leading-relaxed text-zinc-400">
-          Khám phá hành trình của mình qua các dự án, chứng chỉ và công nghệ đã
-          sử dụng.
+          Explore my journey through projects, certificates, and the
+          technologies I&apos;ve worked with.
         </p>
       </Reveal>
 
@@ -178,9 +178,9 @@ export default function Portfolio() {
           {tab === "certificates" && (
             <div className="glass-card flex flex-col items-center gap-3 rounded-2xl px-8 py-20 text-center">
               <span className="text-3xl">✦</span>
-              <p className="text-zinc-300">Chứng chỉ sẽ được cập nhật sớm.</p>
+              <p className="text-zinc-300">Certificates coming soon.</p>
               <p className="mono text-xs text-zinc-500">
-                Đại học FPT TP. Hồ Chí Minh — Kỹ thuật phần mềm (2022 – nay)
+                FPT University Ho Chi Minh City — Software Engineering (2022 – present)
               </p>
             </div>
           )}

@@ -32,9 +32,9 @@ export default function Comments() {
     const next: Comment[] = [
       {
         id: crypto.randomUUID(),
-        name: name.trim() || "Ẩn danh",
+        name: name.trim() || "Anonymous",
         text: text.trim(),
-        date: new Date().toLocaleDateString("vi-VN"),
+        date: new Date().toLocaleDateString("en-US"),
       },
       ...comments,
     ];
@@ -50,7 +50,7 @@ export default function Comments() {
           ✦ Comments
         </p>
         <h2 className="mb-12 text-[clamp(28px,4vw,44px)] font-extrabold tracking-[-0.02em] text-zinc-100">
-          Để lại lời nhắn
+          Leave your thoughts
         </h2>
       </Reveal>
 
@@ -62,13 +62,13 @@ export default function Comments() {
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Tên của bạn (không bắt buộc)"
+            placeholder="Your name (optional)"
             className="mb-4 w-full rounded-lg border border-zinc-800 bg-zinc-900/60 px-4 py-3 text-sm text-zinc-100 outline-none transition-colors placeholder:text-zinc-600 focus:border-zinc-500"
           />
           <textarea
             value={text}
             onChange={(e) => setText(e.target.value)}
-            placeholder="Chia sẻ cảm nghĩ của bạn..."
+            placeholder="Share your thoughts..."
             rows={3}
             className="mb-5 w-full resize-none rounded-lg border border-zinc-800 bg-zinc-900/60 px-4 py-3 text-sm text-zinc-100 outline-none transition-colors placeholder:text-zinc-600 focus:border-zinc-500"
           />
@@ -93,7 +93,7 @@ export default function Comments() {
         ))}
         {comments.length === 0 && (
           <p className="mono text-xs text-zinc-600">
-            Chưa có lời nhắn nào — hãy là người đầu tiên ✦
+            No comments yet — be the first ✦
           </p>
         )}
       </div>

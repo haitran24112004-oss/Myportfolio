@@ -19,7 +19,7 @@ export default function Contact() {
 
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Portfolio contact từ ${name || "khách"}`);
+    const subject = encodeURIComponent(`Portfolio contact from ${name || "a visitor"}`);
     const body = encodeURIComponent(message);
     window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
   };
@@ -31,11 +31,10 @@ export default function Contact() {
           ✦ Contact Me
         </p>
         <h2 className="mb-4 text-[clamp(28px,4vw,44px)] font-extrabold tracking-[-0.02em] text-zinc-100">
-          Liên hệ với mình
+          Contact Me
         </h2>
         <p className="mb-12 max-w-[540px] text-[15px] leading-relaxed text-zinc-400">
-          Nếu bạn muốn hợp tác, trao đổi ý tưởng hoặc đơn giản là chào một câu —
-          cứ gửi tin nhắn nhé.
+          Have something in mind? Send a message and let&apos;s connect.
         </p>
       </Reveal>
 
@@ -46,21 +45,21 @@ export default function Contact() {
               Send Message
             </h3>
             <label className="mono mb-2 block text-xs uppercase tracking-[0.15em] text-zinc-500">
-              Tên của bạn
+              Your Name
             </label>
             <input
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Nguyễn Văn A"
+              placeholder="John Doe"
               className="mb-5 w-full rounded-lg border border-zinc-800 bg-zinc-900/60 px-4 py-3 text-sm text-zinc-100 outline-none transition-colors placeholder:text-zinc-600 focus:border-zinc-500"
             />
             <label className="mono mb-2 block text-xs uppercase tracking-[0.15em] text-zinc-500">
-              Tin nhắn
+              Message
             </label>
             <textarea
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              placeholder="Chào Hải, mình muốn trao đổi về..."
+              placeholder="Hi Hai, I'd like to talk about..."
               rows={5}
               className="mb-6 w-full resize-none rounded-lg border border-zinc-800 bg-zinc-900/60 px-4 py-3 text-sm text-zinc-100 outline-none transition-colors placeholder:text-zinc-600 focus:border-zinc-500"
             />

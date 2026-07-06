@@ -16,7 +16,7 @@ const dmMono = DM_Mono({
 export const metadata: Metadata = {
   title: "Trần Thanh Hải",
   description:
-    "Portfolio của Trần Thanh Hải — Fullstack Developer. Xây dựng website và hệ thống hiện đại, clean và dễ sử dụng.",
+    "Portfolio of Trần Thanh Hải — Fullstack Developer. Building modern, clean, and easy-to-use websites and systems.",
 };
 
 export default function RootLayout({
@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="vi"
+      lang="en"
       className={`${spaceGrotesk.variable} ${dmMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>

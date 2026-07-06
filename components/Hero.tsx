@@ -73,9 +73,9 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.65 }}
             className="mb-7 max-w-[520px] text-[15px] leading-relaxed text-zinc-400"
           >
-            Xây dựng website và hệ thống hiện đại với giao diện clean, responsive
-            và dễ sử dụng. Biến ý tưởng và thiết kế thành những trải nghiệm số
-            hoàn chỉnh — từ frontend, backend đến thiết bị nhúng.
+            Building modern websites and systems with clean, responsive interfaces
+            that are easy to use. Turning ideas and designs into complete digital
+            experiences — from frontend and backend to embedded devices.
           </motion.p>
 
           <motion.div
