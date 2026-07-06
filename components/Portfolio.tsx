@@ -68,6 +68,69 @@ const projects = [
   },
 ];
 
+const certificates = [
+  {
+    title: "Software Development Lifecycle",
+    issuer: "University of Minnesota",
+    date: "Jan 2026",
+    courseCount: 4,
+    courses: [
+      "Software Development Processes and Methodologies",
+      "Agile Software Development",
+      "Lean Software Development",
+      "Engineering Practices for Building Quality Software",
+    ],
+    file: "/certificates/software-development-lifecycle.pdf",
+    verify: "https://coursera.org/verify/specialization/BNICAA6OSWM5",
+  },
+  {
+    title: "User Experience Research and Design",
+    issuer: "University of Michigan",
+    date: "Jan 2026",
+    courseCount: 6,
+    courses: [
+      "Introduction to User Experience Principles and Processes",
+      "Understanding User Needs",
+      "Evaluating Designs with Users",
+      "UX Design: From Concept to Prototype",
+      "UX Research at Scale: Surveys, Analytics, Online Testing",
+      "UX Capstone",
+    ],
+    file: "/certificates/ux-research-and-design.pdf",
+    verify: "https://coursera.org/verify/specialization/6GZSJHNBJXI8",
+  },
+  {
+    title: "Web Design for Everybody: Basics of Web Development & Coding",
+    issuer: "University of Michigan",
+    date: "May 2025",
+    courseCount: 5,
+    courses: [
+      "Introduction to HTML5",
+      "Introduction to CSS3",
+      "Interactivity with JavaScript",
+      "Advanced Styling with Responsive Design",
+      "Web Design for Everybody Capstone",
+    ],
+    file: "/certificates/web-design-for-everybody.pdf",
+    verify: "https://coursera.org/verify/specialization/7R4HEWE1NATO",
+  },
+  {
+    title: "Academic Skills for University Success",
+    issuer: "University of Sydney",
+    date: "Sep 2023",
+    courseCount: 5,
+    courses: [
+      "Information & Digital Literacy for University Success",
+      "Problem-Solving Skills for University Success",
+      "Critical Thinking Skills for University Success",
+      "Communication Skills for University Success",
+      "Academic Skills for University Success Capstone",
+    ],
+    file: "/certificates/academic-skills-for-university-success.pdf",
+    verify: "https://coursera.org/verify/specialization/4P7B7QPQMKTD",
+  },
+];
+
 const techStack: { group: string; items: string[] }[] = [
   {
     group: "Frontend",
@@ -196,12 +259,59 @@ export default function Portfolio() {
           )}
 
           {tab === "certificates" && (
-            <div className="glass-card flex flex-col items-center gap-3 rounded-2xl px-8 py-20 text-center">
-              <span className="text-3xl">✦</span>
-              <p className="text-zinc-300">Certificates coming soon.</p>
-              <p className="mono text-xs text-zinc-500">
-                FPT University Ho Chi Minh City — Software Engineering (2022 – present)
-              </p>
+            <div className="grid gap-6 lg:grid-cols-2">
+              {certificates.map((c, i) => (
+                <motion.article
+                  key={c.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08, duration: 0.6 }}
+                  whileHover={{ y: -6 }}
+                  className="glass-card group rounded-2xl p-7 transition-colors hover:border-zinc-600"
+                >
+                  <div className="mb-2 flex items-start justify-between gap-4">
+                    <h3 className="text-lg font-bold leading-snug text-zinc-100">
+                      {c.title}
+                    </h3>
+                    <span className="mono shrink-0 rounded-full border border-zinc-800 px-3 py-1 text-[11px] text-zinc-400">
+                      Coursera
+                    </span>
+                  </div>
+                  <p className="mono mb-4 text-xs text-zinc-500">
+                    {c.issuer} · {c.date} · {c.courseCount} courses
+                  </p>
+                  <ul className="mb-6 space-y-2">
+                    {c.courses.map((course) => (
+                      <li
+                        key={course}
+                        className="flex gap-2 text-[13px] leading-relaxed text-zinc-500"
+                      >
+                        <span className="text-zinc-600">✦</span>
+                        {course}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mono flex gap-5 text-xs text-zinc-500">
+                    <a
+                      href={c.file}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-zinc-100"
+                    >
+                      view certificate ↗
+                    </a>
+                    <a
+                      href={c.verify}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-zinc-100"
+                    >
+                      verify ↗
+                    </a>
+                  </div>
+                </motion.article>
+              ))}
             </div>
           )}
 
