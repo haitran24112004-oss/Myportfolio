@@ -91,7 +91,10 @@ export default function Comments() {
         </Reveal>
 
         <Reveal direction="left" delay={0.2}>
-          <div className="glass-card flex max-h-[420px] flex-col gap-4 overflow-y-auto rounded-2xl p-8">
+          <div
+            data-lenis-prevent
+            className="glass-card flex max-h-[420px] flex-col gap-4 overflow-y-auto rounded-2xl p-8"
+          >
             {comments.map((c) => (
               <div key={c.id} className="rounded-xl border border-zinc-800/60 px-5 py-4">
                 <div className="mb-1 flex items-center justify-between gap-3">
