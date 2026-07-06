@@ -44,10 +44,8 @@ export default function CustomCursor() {
       })`;
       const ringScale = hovering ? 2.2 : pressed ? 0.8 : 1;
       ring.style.transform = `translate(${ringPos.x}px, ${ringPos.y}px) translate(-50%, -50%) scale(${ringScale})`;
-      ring.style.borderColor = hovering
-        ? "rgba(244,244,245,0.9)"
-        : "rgba(244,244,245,0.4)";
-      ring.style.background = hovering ? "rgba(244,244,245,0.08)" : "transparent";
+      ring.style.opacity = hovering ? "1" : "0.5";
+      ring.style.background = hovering ? "rgba(255,255,255,0.15)" : "transparent";
 
       rafId = requestAnimationFrame(tick);
     };
@@ -71,15 +69,16 @@ export default function CustomCursor() {
     <>
       <div
         ref={dotRef}
-        className="fixed top-0 left-0 z-[9999] w-2 h-2 rounded-full bg-zinc-100 pointer-events-none"
-        style={{ transition: "opacity 0.2s" }}
+        className="fixed top-0 left-0 z-[9999] w-2 h-2 rounded-full bg-white pointer-events-none"
+        style={{ transition: "opacity 0.2s", mixBlendMode: "difference" }}
       />
       <div
         ref={ringRef}
-        className="fixed top-0 left-0 z-[9998] w-9 h-9 rounded-full border pointer-events-none"
+        className="fixed top-0 left-0 z-[9998] w-9 h-9 rounded-full border-2 border-white pointer-events-none"
         style={{
-          borderColor: "rgba(244,244,245,0.4)",
-          transition: "border-color 0.25s, background 0.25s",
+          opacity: 0.5,
+          transition: "opacity 0.25s, background 0.25s",
+          mixBlendMode: "difference",
         }}
       />
     </>

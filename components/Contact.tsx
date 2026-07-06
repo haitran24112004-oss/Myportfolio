@@ -1,14 +1,22 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, type FormEventHandler } from "react";
 import Reveal from "./Reveal";
 
 const EMAIL = "haitran24112004@gmail.com";
 
 const socials = [
-  { name: "GitHub", handle: "@github", href: "https://github.com/" },
+  {
+    name: "GitHub",
+    handle: "@haitran24112004-oss",
+    href: "https://github.com/haitran24112004-oss",
+  },
   { name: "LinkedIn", handle: "@linkedin", href: "https://linkedin.com/" },
-  { name: "Facebook", handle: "@facebook", href: "https://facebook.com/" },
+  {
+    name: "Facebook",
+    handle: "@thanh.hai.112417",
+    href: "https://www.facebook.com/thanh.hai.112417",
+  },
   { name: "Email", handle: EMAIL, href: `mailto:${EMAIL}` },
   { name: "Phone / Zalo", handle: "0922 839 979", href: "tel:0922839979" },
 ];
@@ -17,7 +25,7 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     const subject = encodeURIComponent(`Portfolio contact from ${name || "a visitor"}`);
     const body = encodeURIComponent(message);
